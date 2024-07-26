@@ -664,6 +664,14 @@ config ARCH_BOARD_GD32F470ZK_AIOTBOX
 	---help---
 		GD32 MCU GD32F470ZK-AIOTBOX board based on the GD32F4 GD32F470ZKT6 MCU.
 
+config ARCH_BOARD_GD32F303ZG_EVAL
+	bool "GD32 MCU GD32F303ZG"
+	depends on ARCH_CHIP_GD32F303ZG
+	select ARCH_HAVE_LEDS
+	select ARCH_HAVE_BUTTONS
+	select ARCH_HAVE_IRQBUTTONS
+	---help---
+		GD32 MCU GD32F303ZG-EVAL board based on the GD32F3 GD32F303ZGT6 MCU.
 
 config ARCH_BOARD_GD32F470ZK_EVAL
 	bool "GD32 MCU GD32F470ZK"
@@ -3246,6 +3254,7 @@ config ARCH_BOARD
 	default "freedom-kl26z"             if ARCH_BOARD_FREEDOM_KL26Z
 	default "gd32f450zk-eval"           if ARCH_BOARD_GD32F450ZK_EVAL
 	default "gd32f450zk-aiotbox"        if ARCH_BOARD_GD32F450ZK_AIOTBOX
+	default "gd32f303zg-eval"           if ARCH_BOARD_GD32F303ZG_EVAL
 	default "gd32f470zk-eval"           if ARCH_BOARD_GD32F470ZK_EVAL
 	default "gd32f470zk-aiotbox"        if ARCH_BOARD_GD32F470ZK_AIOTBOX
 	default "gd32f470ik-eval"           if ARCH_BOARD_GD32F470IK_EVAL
@@ -3686,6 +3695,9 @@ source "boards/arm/gd32f4/gd32f450zk-eval/Kconfig"
 endif
 if ARCH_BOARD_GD32F450ZK_AIOTBOX
 source "boards/arm/gd32f4/gd32f450zk-aiotbox/Kconfig"
+endif
+if ARCH_BOARD_GD32F303ZG_EVAL
+source "boards/arm/gd32f3/gd32f303zg-eval/Kconfig"
 endif
 if ARCH_BOARD_GD32F470ZK_EVAL
 source "boards/arm/gd32f4/gd32f470zk-eval/Kconfig"
