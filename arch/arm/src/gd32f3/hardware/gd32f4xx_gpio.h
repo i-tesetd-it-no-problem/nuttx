@@ -25,16 +25,14 @@
  * Pre-processor Definitions
  ****************************************************************************/
 
-/* GPIOx(x=A,B,C,D,E,F,G,H,I) definitions ***********************************/
-#define GD32_GPIOA_BASE                  (GD32_GPIO_BASE + 0x00000000)
-#define GD32_GPIOB_BASE                  (GD32_GPIO_BASE + 0x00000400)
-#define GD32_GPIOC_BASE                  (GD32_GPIO_BASE + 0x00000800)
-#define GD32_GPIOD_BASE                  (GD32_GPIO_BASE + 0x00000c00)
-#define GD32_GPIOE_BASE                  (GD32_GPIO_BASE + 0x00001000)
-#define GD32_GPIOF_BASE                  (GD32_GPIO_BASE + 0x00001400)
-#define GD32_GPIOG_BASE                  (GD32_GPIO_BASE + 0x00001800)
-#define GD32_GPIOH_BASE                  (GD32_GPIO_BASE + 0x00001c00)
-#define GD32_GPIOI_BASE                  (GD32_GPIO_BASE + 0x00002000)
+/* GPIOx(x=A,B,C,D,E,F,G) definitions */
+#define GD32_GPIOA_BASE                      (GD32_GPIO_BASE + 0x00000000U)
+#define GD32_GPIOB_BASE                      (GD32_GPIO_BASE + 0x00000400U)
+#define GD32_GPIOC_BASE                      (GD32_GPIO_BASE + 0x00000800U)
+#define GD32_GPIOD_BASE                      (GD32_GPIO_BASE + 0x00000C00U)
+#define GD32_GPIOE_BASE                      (GD32_GPIO_BASE + 0x00001000U)
+#define GD32_GPIOF_BASE                      (GD32_GPIO_BASE + 0x00001400U)
+#define GD32_GPIOG_BASE                      (GD32_GPIO_BASE + 0x00001800U)
 
 /* Register Offsets *********************************************************/
 

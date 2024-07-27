@@ -1,5 +1,5 @@
 /****************************************************************************
- * arch/arm/src/gd32f4/hardware/gd32f4xx_dma.h
+ * arch/arm/src/gd32f3/hardware/gd32f3xx_dma.h
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -18,8 +18,8 @@
  *
  ****************************************************************************/
 
-#ifndef __ARCH_ARM_SRC_GD32F4_HARDWARE_GD32F4XX_DMA_H
-#define __ARCH_ARM_SRC_GD32F4_HARDWARE_GD32F4XX_DMA_H
+#ifndef __ARCH_ARM_SRC_GD32F3_HARDWARE_GD32F3XX_DMA_H
+#define __ARCH_ARM_SRC_GD32F3_HARDWARE_GD32F3XX_DMA_H
 
 /****************************************************************************
  * Included Files
@@ -477,4 +477,4 @@
 #define DMA_REQ_TIMER7_TG            ((GD32_DMA_SUBPERI7 << PERIPH_SHIFT) | ((GD32_DMA_CH7 + 8) << CHANNEL_SHIFT))
 #define DMA_REQ_TIMER7_CMT           ((GD32_DMA_SUBPERI7 << PERIPH_SHIFT) | ((GD32_DMA_CH7 + 8) << CHANNEL_SHIFT))
 
-#endif /* __ARCH_ARM_SRC_GD32F4_HARDWARE_GD32F4XX_DMA_H */
+#endif /* __ARCH_ARM_SRC_GD32F3_HARDWARE_GD32F3XX_DMA_H */

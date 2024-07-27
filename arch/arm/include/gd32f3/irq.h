@@ -1,5 +1,5 @@
 /****************************************************************************
- * arch/arm/include/gd32f4/irq.h
+ * arch/arm/include/gd32f3/irq.h
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -22,8 +22,8 @@
  * only indirectly through nuttx/irq.h
  */
 
-#ifndef __ARCH_ARM_INCLUDE_GD32F4_IRQ_H
-#define __ARCH_ARM_INCLUDE_GD32F4_IRQ_H
+#ifndef __ARCH_ARM_INCLUDE_GD32F3_IRQ_H
+#define __ARCH_ARM_INCLUDE_GD32F3_IRQ_H
 
 /****************************************************************************
  * Included Files
@@ -31,7 +31,7 @@
 
 #include <nuttx/config.h>
 #include <nuttx/irq.h>
-#include <arch/gd32f4/chip.h>
+#include <arch/gd32f3/chip.h>
 
 /****************************************************************************
  * Pre-processor Prototypes
@@ -69,8 +69,8 @@
  * Included Files
  ****************************************************************************/
 
-#if defined(CONFIG_GD32F4_GD32F4XX)
-#  include <arch/gd32f4/gd32f4xx_irq.h>
+#if defined(CONFIG_GD32F3_GD32F3XX)
+#  include <arch/gd32f3/gd32f3xx_irq.h>
 #else
 #  error "Uknown GD32 chip"
 #endif
@@ -102,4 +102,4 @@ extern "C"
 #endif
 #endif
 
-#endif /* __ARCH_ARM_INCLUDE_GD32F4_IRQ_H */
+#endif /* __ARCH_ARM_INCLUDE_GD32F3_IRQ_H */
