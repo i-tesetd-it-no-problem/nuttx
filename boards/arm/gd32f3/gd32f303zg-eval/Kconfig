@@ -17,10 +17,4 @@ choice
 
 		Disadvantage: You loose the use of the
 		other functions on PA9, PA10
-
-				GD32F470ZK_EVAL
-			USART0 GPIO
-			-- ----- --------- ----
-			RX    USART0_RX PA10
-			TX    USART0_TX PA9
-			-- ----- --------- ---
+endchoice
