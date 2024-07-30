@@ -1,0 +1,7 @@
+menu "Nothing Configuration"
+
+config NOTHING_OPTION
+    bool "Nothing"
+    default n
+
+endmenu

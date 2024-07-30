@@ -1,8 +1,7 @@
-#
-# For a description of the syntax of this configuration file,
-# see the file kconfig-language.txt in the NuttX tools repository.
-#
+menu "Nothing Configuration"
 
-# if ARCH_CHIP_GD32F3
+config NOTHING_OPTION
+    bool "Nothing"
+    default n
 
-# endif # ARCH_CHIP_GD32F3
+endmenu
