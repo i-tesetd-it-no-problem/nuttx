@@ -24,9 +24,6 @@
 /****************************************************************************
  * Included Files
  ****************************************************************************/
-
-#include <nuttx/config.h>
-
 /****************************************************************************
  * Pre-processor Prototypes
  ****************************************************************************/
@@ -35,7 +32,6 @@
  * It must be done in arch/arm/src/gd32f3/Kconfig !
  */
 
-#ifdef CONFIG_ARCH_CHIP_GD32F303ZG
 #  define GD32_NGPIO_PORTS              7   /* GPIOA-G */
 #  define GD32_NCRC                     1   /* CRC calculation unit */
 // #  define GD32_NTRNG                    1   /* True random number generator (RNG) */ 
@@ -60,9 +56,7 @@
 // #  define GD32_NETHERNET                1   /* 10/100 Ethernet MAC */
 #  define GD32_NUSBFS                   1   /* USB FS*/
 // #  define GD32_NUSBHS                   1   /* USB HS*/
-#else
-#  error "Unknown GD32F3 chip type"
-#endif
+
 
 /* Get customizations for each supported chip and provide alternate function
  * pin-mapping

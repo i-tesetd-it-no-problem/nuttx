@@ -29,7 +29,6 @@
  * Included Files
  ****************************************************************************/
 
-#include <nuttx/config.h>
 #include <nuttx/irq.h>
 #include <arch/gd32f3/chip.h>
 
@@ -69,11 +68,8 @@
  * Included Files
  ****************************************************************************/
 
-#if defined(CONFIG_GD32F3_GD32F3XX)
-#  include <arch/gd32f3/gd32f3xx_irq.h>
-#else
-#  error "Uknown GD32 chip"
-#endif
+#include <arch/gd32f3/gd32f3xx_irq.h>
+
 
 /****************************************************************************
  * Public Types

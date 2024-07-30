@@ -1,5 +1,5 @@
 /****************************************************************************
- * arch/arm/src/gd32f3/chip.h
+ * boards/arm/gd32f4/gd32f470zk-eval/src/gd32f4xx_bringup.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -18,32 +18,65 @@
  *
  ****************************************************************************/
 
-#ifndef __ARCH_ARM_SRC_GD32F3_CHIP_H
-#define __ARCH_ARM_SRC_GD32F3_CHIP_H
-
 /****************************************************************************
  * Included Files
  ****************************************************************************/
 
 #include <nuttx/config.h>
 
-/* Include the chip capabilities file */
+#include <debug.h>
+#include <errno.h>
+#include <stdbool.h>
+#include <stdio.h>
 
-#include <arch/gd32f3/chip.h>
+#include <nuttx/board.h>
+#include <nuttx/clock.h>
+#include <nuttx/fs/fs.h>
+#include <nuttx/fs/nxffs.h>
+#include <nuttx/kmalloc.h>
+#include <nuttx/mtd/mtd.h>
+#include <nuttx/rc/dummy.h>
 
-/* Include the chip interrupt definition file */
+#include "gd32f30x.h"
 
-#include <arch/gd32f3/irq.h>
+#include <nuttx/leds/userled.h>
+
+#include "gd32f303z_eval.h"
 
 /****************************************************************************
- * Pre-processor Definitions
+ * Public Functions
  ****************************************************************************/
 
-/* Provide the required number of peripheral interrupt vector definitions as
- * well. The definition GD32_IRQ_NEXTINT simply comes from the chip-specific
- * IRQ header file included by arch/gd32f3/irq.h.
- */
+/****************************************************************************
+ * Name: gd32_bringup
+ *
+ * Description:
+ *   Perform architecture-specific initialization
+ *
+ *   CONFIG_BOARD_LATE_INITIALIZE=y :
+ *     Called from board_late_initialize().
+ *
+ *   CONFIG_BOARD_LATE_INITIALIZE=n && CONFIG_BOARDCTL=y :
+ *     Called from the NSH library via boardctl()
+ *
+ ****************************************************************************/
 
-#define ARMV7M_PERIPHERAL_INTERRUPTS  GD32_IRQ_NEXTINT
+int gd32_bringup(void) {
+  int ret = OK;
 
-#endif /* __ARCH_ARM_SRC_GD32F3_CHIP_H */
+  /* Register the GPIO driver */
+
+  ret = gd32_gpio_initialize();
+  if (ret < 0) {
+    syslog(LOG_ERR, "Failed to initialize GPIO Driver: %d\n", ret);
+    return ret;
+  }
+  /* Register the LED driver */
+
+  ret = userled_lower_initialize(LED_DRIVER_PATH);
+  if (ret < 0) {
+    syslog(LOG_ERR, "ERROR: userled_lower_initialize() failed: %d\n", ret);
+  }
+
+  return ret;
+}

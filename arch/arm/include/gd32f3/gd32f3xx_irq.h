@@ -28,8 +28,6 @@
 /****************************************************************************
  * Included Files
  ****************************************************************************/
-
-#include <nuttx/config.h>
 #include <nuttx/irq.h>
 
 /****************************************************************************
@@ -46,8 +44,6 @@
  *
  * External interrupts (vectors >= 16)
  */
-
-#if defined(CONFIG_GD32F3_GD32F303)
 
 #define GD32_IRQ_WWDGT                      (GD32_IRQ_EXINT+0)  /* 0:  window watchdog timer interrupt */
 #define GD32_IRQ_LVD                        (GD32_IRQ_EXINT+1)  /* 1:  LVD through EXTI line detect interrupt */
@@ -110,16 +106,10 @@
 #define GD32_IRQ_DMA1_CHANNEL2              (GD32_IRQ_EXINT+58) /* 58: DMA1 channel2 interruptt */
 #define GD32_IRQ_DMA1_CHANNEL3_4            (GD32_IRQ_EXINT+59) /* 59: DMA1 channel3_4 interrupt */
 
-#else
-    #error "Unkonwn GD32F3xx chip."
-#endif /* CONFIG_GD32F3_GD32F303 */
 
-#ifdef(CONFIG_GD32F3_GD32F303)
-#  define GD32_IRQ_NEXTINT      (60)
-#  define NR_IRQS               (GD32_IRQ_EXINT + GD32_IRQ_NEXTINT)
-#else
-#  error "Unknown GD32F3xx chip!"
-#endif
+#define GD32_IRQ_NEXTINT      (60)
+#define NR_IRQS               (GD32_IRQ_EXINT + GD32_IRQ_NEXTINT)
+
 
 /****************************************************************************
  * Public Types

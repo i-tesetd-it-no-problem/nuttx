@@ -1,5 +1,5 @@
 /****************************************************************************
- * arch/arm/src/gd32f3/chip.h
+ * boards/arm/gd32f4/gd32f470zk-eval/src/gd32f470z_eval.h
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -18,32 +18,23 @@
  *
  ****************************************************************************/
 
-#ifndef __ARCH_ARM_SRC_GD32F3_CHIP_H
-#define __ARCH_ARM_SRC_GD32F3_CHIP_H
+#ifndef __BOARDS_ARM_GD32F4_GD32F470ZK_EVAL_SRC_GD32F470Z_EVAL_H
+#define __BOARDS_ARM_GD32F4_GD32F470ZK_EVAL_SRC_GD32F470Z_EVAL_H
 
 /****************************************************************************
  * Included Files
  ****************************************************************************/
 
 #include <nuttx/config.h>
+#include <nuttx/compiler.h>
+#include <stdint.h>
 
-/* Include the chip capabilities file */
+#define GD32_PROCFS_MOUNTPOINT "/proc"
 
-#include <arch/gd32f3/chip.h>
+#define BOARD_NGPIOOUT 1
 
-/* Include the chip interrupt definition file */
+int gd32_bringup(void);
 
-#include <arch/gd32f3/irq.h>
+int gd32_gpio_initialize(void);
 
-/****************************************************************************
- * Pre-processor Definitions
- ****************************************************************************/
-
-/* Provide the required number of peripheral interrupt vector definitions as
- * well. The definition GD32_IRQ_NEXTINT simply comes from the chip-specific
- * IRQ header file included by arch/gd32f3/irq.h.
- */
-
-#define ARMV7M_PERIPHERAL_INTERRUPTS  GD32_IRQ_NEXTINT
-
-#endif /* __ARCH_ARM_SRC_GD32F3_CHIP_H */
+#endif /* __BOARDS_ARM_GD32F4_GD32F470ZK_EVAL_SRC_GD32F470Z_EVAL_H */
