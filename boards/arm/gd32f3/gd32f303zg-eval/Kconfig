@@ -1,0 +1,26 @@
+choice
+	prompt "Select Console wiring."
+	default GD32F303ZG_EVAL_CONSOLE_BOARD
+	---help---
+		Select where you will connect the console.
+
+		Virtual COM Port:
+
+		Advantage: Use the ST-Link as a console. No Extra wiring
+		needed.
+
+		Disadvantage: Not the best choice for initial bring up.
+
+		BOARD USART Connector:
+
+		Advantage: You have a shield so it is easy.
+
+		Disadvantage: You loose the use of the
+		other functions on PA9, PA10
+
+				GD32F470ZK_EVAL
+			USART0 GPIO
+			-- ----- --------- ----
+			RX    USART0_RX PA10
+			TX    USART0_TX PA9
+			-- ----- --------- ---
